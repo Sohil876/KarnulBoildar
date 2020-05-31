@@ -1,6 +1,11 @@
 #!/bin/bash
+### START_CONFIG ###
+KERNEL_LINK=https://github.com/Sohil876/kernel_xiaomi_msm8953
+KERNEL_BRANCH=derp10
+KERNEL_NAME=Perf+
+### END_CONFIG ###
 echo "Cloning dependencies"
-git clone --depth=1 -b derp10 https://github.com/Sohil876/kernel_xiaomi_msm8953 kernel
+git clone --depth=1 -b $KERNEL_BRANCH $KERNEL_LINK kernel
 cd kernel
 git clone --depth=1 -b master https://github.com/kdrag0n/proton-clang clang
 git clone https://github.com/MASTERGUY/AnyKernel3 -b tissot --depth=1 AnyKernel
@@ -32,8 +37,8 @@ function compile() {
 # Zipping
 function zipping() {
     cd AnyKernel || exit 1
-    zip -r9 Perf-Kernel-${TANGGAL}.zip *
-    curl https://bashupload.com/Perf-Kernel-${TANGGAL}.zip --data-binary @Perf-Kernel-${TANGGAL}.zip
+    zip -r9 $KERNEL_NAME-Kernel-${TANGGAL}.zip *
+    curl https://bashupload.com/${KERNEL_NAME}-Kernel-${TANGGAL}.zip --data-binary @${KERNEL_NAME}-Kernel-${TANGGAL}.zip
 }
 compile
 zipping
