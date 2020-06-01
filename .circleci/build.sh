@@ -1,8 +1,8 @@
 #!/bin/bash
 ### START_CONFIG ###
-KERNEL_LINK=https://github.com/Sohil876/kernel_xiaomi_msm8953
-KERNEL_BRANCH=derp10
-KERNEL_NAME=Perf+
+KERNEL_LINK=https://github.com/AospExtended-Devices/kernel_xiaomi_msm8953
+KERNEL_BRANCH=10.x
+KERNEL_NAME=Flex
 ### END_CONFIG ###
 echo "Cloning dependencies"
 git clone --depth=1 -b $KERNEL_BRANCH $KERNEL_LINK kernel
