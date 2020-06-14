@@ -1,8 +1,8 @@
 #!/bin/bash
 ### START_CONFIG ###
-KERNEL_LINK=https://github.com/reharsh67/Moun_Kernel_Tissot
-KERNEL_BRANCH=10.0-4.9
-KERNEL_NAME=Moun
+KERNEL_LINK=https://github.com/Takeshiro04/halifax_kernel_tissot
+KERNEL_BRANCH=sx
+KERNEL_NAME=HaliFax
 KERNEL_CONF_FILE=https://raw.githubusercontent.com/DerpFest-Devices/kernel_xiaomi_msm8953/derp10/arch/arm64/configs/tissot_defconfig
 ### END_CONFIG ###
 echo "Cloning dependencies"
@@ -20,7 +20,7 @@ export PATH="$(pwd)/clang/bin:$PATH"
 export KBUILD_COMPILER_STRING="$($kernel/clang/bin/clang --version | head -n 1 | perl -pe 's/\((?:http|git).*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//' -e 's/^.*clang/clang/')"
 export ARCH=arm64
 export KBUILD_BUILD_USER=Sohil876
-export KBUILD_BUILD_HOST=circleci
+export KBUILD_BUILD_HOST=CircleCI
 # Compile plox
 function compile() {
     make -j$(nproc) O=out ARCH=arm64 tissot_defconfig
