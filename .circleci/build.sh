@@ -1,8 +1,8 @@
 #!/bin/bash
 ### START_CONFIG ###
-KERNEL_LINK=https://github.com/DerpFest-Devices/kernel_xiaomi_msm8953
-KERNEL_BRANCH=derp10
-KERNEL_NAME=perf+
+KERNEL_LINK=https://github.com/PixelExperience-Devices/kernel_xiaomi_tissot
+KERNEL_BRANCH=ten
+KERNEL_NAME=strix
 KERNEL_CONF_FILE=https://raw.githubusercontent.com/DerpFest-Devices/kernel_xiaomi_msm8953/derp10/arch/arm64/configs/tissot_defconfig
 ### END_CONFIG ###
 echo "Cloning dependencies"
