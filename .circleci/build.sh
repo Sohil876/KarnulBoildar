@@ -1,8 +1,8 @@
 #!/bin/bash
 ### START_CONFIG ###
-KERNEL_LINK=https://github.com/Takeshiro04/halifax_kernel_tissot
-KERNEL_BRANCH=sx
-KERNEL_NAME=HaliFax
+KERNEL_LINK=https://github.com/DerpFest-Devices/kernel_xiaomi_msm8953
+KERNEL_BRANCH=derp10
+KERNEL_NAME=perf+
 KERNEL_CONF_FILE=https://raw.githubusercontent.com/DerpFest-Devices/kernel_xiaomi_msm8953/derp10/arch/arm64/configs/tissot_defconfig
 ### END_CONFIG ###
 echo "Cloning dependencies"
