@@ -1,7 +1,7 @@
 #!/bin/bash
 ### START_CONFIG ###
-KERNEL_LINK=https://github.com/cheewaca/Tissot_4.9
-KERNEL_BRANCH=Lineage-17.0_CL
+KERNEL_LINK=https://github.com/LineageOS/android_kernel_xiaomi_msm8953
+KERNEL_BRANCH=lineage-17.1
 KERNEL_NAME=LineageCL
 KERNEL_CONF_FILE=https://raw.githubusercontent.com/DerpFest-Devices/kernel_xiaomi_msm8953/derp10/arch/arm64/configs/tissot_defconfig
 ### END_CONFIG ###
