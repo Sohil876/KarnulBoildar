@@ -11,7 +11,7 @@ git clone --depth=1 -b $KERNEL_BRANCH $KERNEL_LINK kernel
 cd kernel
 rm Makefile
 wget $KERNEL_CONF_FILE -O Makefile
-wget $KERNEL_CONF_FILE -O arch/arm64/configs/tissot_defconfig
+#wget $KERNEL_CONF_FILE -O arch/arm64/configs/tissot_defconfig
 git clone --depth=1 -b master https://github.com/kdrag0n/proton-clang clang
 git clone https://github.com/MASTERGUY/AnyKernel3 -b tissot --depth=1 AnyKernel
 echo "Done"
@@ -26,7 +26,8 @@ export KBUILD_BUILD_USER=Sohil876
 export KBUILD_BUILD_HOST=CircleCI
 # Compile plox
 function compile() {
-    make -j$(nproc) O=out ARCH=arm64 tissot_defconfig
+#    make -j$(nproc) O=out ARCH=arm64 tissot_defconfig
+    make -j$(nproc) O=out ARCH=arm64 msm8953_defconfig
     make -j$(nproc) O=out \
                     ARCH=arm64 \
                       CC=clang \
