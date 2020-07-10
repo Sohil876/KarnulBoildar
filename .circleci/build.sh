@@ -4,10 +4,13 @@ KERNEL_LINK=https://github.com/android-linux-stable/msm-4.9
 KERNEL_BRANCH=kernel.lnx.4.9.r27-rel
 KERNEL_NAME=caf+
 KERNEL_CONF_FILE=https://raw.githubusercontent.com/DerpFest-Devices/kernel_xiaomi_msm8953/derp10/arch/arm64/configs/tissot_defconfig
+KERNEL_MAKE_FILE=https://raw.githubusercontent.com/Sohil876/KarnulBoildar/master/Makefile
 ### END_CONFIG ###
 echo "Cloning dependencies"
 git clone --depth=1 -b $KERNEL_BRANCH $KERNEL_LINK kernel
 cd kernel
+rm Makefile
+wget $KERNEL_CONF_FILE -O Makefile
 wget $KERNEL_CONF_FILE -O arch/arm64/configs/tissot_defconfig
 git clone --depth=1 -b master https://github.com/kdrag0n/proton-clang clang
 git clone https://github.com/MASTERGUY/AnyKernel3 -b tissot --depth=1 AnyKernel
