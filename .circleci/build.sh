@@ -9,8 +9,8 @@ KERNEL_MAKE_FILE=https://raw.githubusercontent.com/Sohil876/KarnulBoildar/master
 echo "Cloning dependencies"
 git clone --depth=1 -b $KERNEL_BRANCH $KERNEL_LINK kernel
 cd kernel
-rm Makefile
-wget $KERNEL_CONF_FILE -O Makefile
+#rm Makefile
+#wget $KERNEL_CONF_FILE -O Makefile
 #wget $KERNEL_CONF_FILE -O arch/arm64/configs/tissot_defconfig
 git clone --depth=1 -b master https://github.com/kdrag0n/proton-clang clang
 git clone https://github.com/MASTERGUY/AnyKernel3 -b tissot --depth=1 AnyKernel
