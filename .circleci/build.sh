@@ -30,8 +30,8 @@ export KBUILD_BUILD_USER=Sohil876
 export KBUILD_BUILD_HOST=CircleCI
 # Compile plox
 function compile() {
-#    make -j$(nproc) O=out ARCH=arm64 tissot_defconfig
-    make -j$(nproc) O=out ARCH=arm64 msm8953_defconfig
+    make -j$(nproc) O=out ARCH=arm64 tissot_defconfig
+#    make -j$(nproc) O=out ARCH=arm64 msm8953_defconfig
     make -j$(nproc) O=out \
                     ARCH=arm64 \
                       CC=clang \
