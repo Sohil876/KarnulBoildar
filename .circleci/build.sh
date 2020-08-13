@@ -6,18 +6,19 @@ KERNEL_NAME=perf+
 KERNEL_CONF_FILE=https://raw.githubusercontent.com/DerpFest-Devices/kernel_xiaomi_msm8953/derp10/arch/arm64/configs/tissot_defconfig
 KERNEL_MAKE_FILE=https://raw.githubusercontent.com/Sohil876/KarnulBoildar/master/Makefile
 #CLANG_SELECTED=https://github.com/kdrag0n/proton-clang
-CLANG_SELECTED=https://github.com/KudProject/prebuilts_clang_host_linux-x86
-CLANG_BRANCH=r383902c
+CLANG_SELECTED=https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86
+CLANG_BRANCH=master
 ### END_CONFIG ###
 echo "Cloning dependencies"
 git clone --depth=1 -b $KERNEL_BRANCH $KERNEL_LINK kernel
+git clone --depth=1 -b $CLANG_BRANCH $CLANG_SELECTED
+mv clang-r383902c kernel/clang
+git clone https://github.com/MASTERGUY/AnyKernel3 -b tissot --depth=1 AnyKernel
+echo "Done"
 cd kernel
 #rm Makefile
 #wget $KERNEL_MAKE_FILE -O Makefile
 #wget $KERNEL_CONF_FILE -O arch/arm64/configs/tissot_defconfig
-git clone --depth=1 -b $CLANG_BRANCH $CLANG_SELECTED clang
-git clone https://github.com/MASTERGUY/AnyKernel3 -b tissot --depth=1 AnyKernel
-echo "Done"
 KERNEL_DIR=$(pwd)
 IMAGE="${KERNEL_DIR}/out/arch/arm64/boot/Image.gz-dtb"
 TANGGAL=$(date +"%Y%m%d-%H")
