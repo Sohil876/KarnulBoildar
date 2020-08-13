@@ -5,16 +5,15 @@ KERNEL_BRANCH=derp10
 KERNEL_NAME=perf+
 KERNEL_CONF_FILE=https://raw.githubusercontent.com/DerpFest-Devices/kernel_xiaomi_msm8953/derp10/arch/arm64/configs/tissot_defconfig
 KERNEL_MAKE_FILE=https://raw.githubusercontent.com/Sohil876/KarnulBoildar/master/Makefile
-#CLANG_SELECTED=https://github.com/kdrag0n/proton-clang
-CLANG_SELECTED=https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86
+CLANG_SELECTED=https://github.com/kdrag0n/proton-clang
+#CLANG_SELECTED=https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86
 CLANG_BRANCH=master
 ### END_CONFIG ###
 echo "Cloning dependencies"
 git clone --depth=1 -b $KERNEL_BRANCH $KERNEL_LINK kernel
-git clone --depth=1 -b $CLANG_BRANCH $CLANG_SELECTED tmpclang
-mv tmpclang/clang-r383902c kernel/clang
+git clone --depth=1 -b $CLANG_BRANCH $CLANG_SELECTED kernel/clang
+git clone https://github.com/MASTERGUY/AnyKernel3 -b tissot --depth=1 kernel/AnyKernel
 cd kernel
-git clone https://github.com/MASTERGUY/AnyKernel3 -b tissot --depth=1 AnyKernel
 #rm Makefile
 #wget $KERNEL_MAKE_FILE -O Makefile
 #wget $KERNEL_CONF_FILE -O arch/arm64/configs/tissot_defconfig
