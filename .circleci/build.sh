@@ -1,6 +1,6 @@
 #!/bin/bash
 ### START_CONFIG ###
-KERNEL_LINK=https://github.com/DerpFest-Devices/kernel_xiaomi_msm8953
+KERNEL_LINK=https://github.com/Devel-Zone/kernel_xiaomi_msm8953
 KERNEL_BRANCH=derp10
 KERNEL_NAME=perf+
 KERNEL_CONF_FILE=https://raw.githubusercontent.com/DerpFest-Devices/kernel_xiaomi_msm8953/derp10/arch/arm64/configs/tissot_defconfig
