@@ -11,14 +11,14 @@ CLANG_BRANCH=master
 ### END_CONFIG ###
 echo "Cloning dependencies"
 git clone --depth=1 -b $KERNEL_BRANCH $KERNEL_LINK kernel
-git clone --depth=1 -b $CLANG_BRANCH $CLANG_SELECTED
-mv clang-r383902c kernel/clang
-git clone https://github.com/MASTERGUY/AnyKernel3 -b tissot --depth=1 AnyKernel
-echo "Done"
+git clone --depth=1 -b $CLANG_BRANCH $CLANG_SELECTED tmpclang
+mv tmpclang/clang-r383902c kernel/clang
 cd kernel
+git clone https://github.com/MASTERGUY/AnyKernel3 -b tissot --depth=1 AnyKernel
 #rm Makefile
 #wget $KERNEL_MAKE_FILE -O Makefile
 #wget $KERNEL_CONF_FILE -O arch/arm64/configs/tissot_defconfig
+echo "Done"
 KERNEL_DIR=$(pwd)
 IMAGE="${KERNEL_DIR}/out/arch/arm64/boot/Image.gz-dtb"
 TANGGAL=$(date +"%Y%m%d-%H")
