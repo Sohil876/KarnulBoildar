@@ -1,7 +1,7 @@
 #!/bin/bash
 ### START_CONFIG ###
-KERNEL_LINK=https://github.com/Devel-Zone/kernel_xiaomi_msm8953
-KERNEL_BRANCH=derp10
+KERNEL_LINK=https://github.com/android-linux-stable/msm-4.9
+KERNEL_BRANCH=kernel.lnx.4.9.r11-rel
 KERNEL_NAME=perf+
 KERNEL_CONF_FILE=https://raw.githubusercontent.com/DerpFest-Devices/kernel_xiaomi_msm8953/derp10/arch/arm64/configs/tissot_defconfig
 KERNEL_MAKE_FILE=https://raw.githubusercontent.com/Sohil876/KarnulBoildar/master/Makefile
@@ -29,8 +29,8 @@ export KBUILD_BUILD_USER=Sohil876
 export KBUILD_BUILD_HOST=CircleCI
 # Compile plox
 function compile() {
-    make -j$(nproc) O=out ARCH=arm64 tissot_defconfig
-#    make -j$(nproc) O=out ARCH=arm64 msm8953_defconfig
+#    make -j$(nproc) O=out ARCH=arm64 tissot_defconfig
+    make -j$(nproc) O=out ARCH=arm64 msm8953_defconfig
     make -j$(nproc) O=out \
                     ARCH=arm64 \
                       CC=clang \
