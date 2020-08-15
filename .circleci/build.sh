@@ -1,7 +1,7 @@
 #!/bin/bash
 ### START_CONFIG ###
-KERNEL_LINK=https://github.com/android-linux-stable/msm-4.9
-KERNEL_BRANCH=kernel.lnx.4.9.r11-rel
+KERNEL_LINK=https://github.com/LineageOS/android_kernel_xiaomi_msm8953
+KERNEL_BRANCH=lineage-17.1
 KERNEL_NAME=perf+
 KERNEL_CONF_FILE=https://raw.githubusercontent.com/DerpFest-Devices/kernel_xiaomi_msm8953/derp10/arch/arm64/configs/tissot_defconfig
 KERNEL_MAKE_FILE=https://raw.githubusercontent.com/Sohil876/KarnulBoildar/master/Makefile
