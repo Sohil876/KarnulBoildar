@@ -1,7 +1,7 @@
 #!/bin/bash
 ### START_CONFIG ###
-KERNEL_LINK=https://github.com/LineageOS/android_kernel_xiaomi_msm8953
-KERNEL_BRANCH=lineage-17.1
+KERNEL_LINK=https://github.com/KudProject/kernel_msm-4.9
+KERNEL_BRANCH=LA.UM.8.6.2.r1/master
 KERNEL_NAME=perf+
 KERNEL_CONF_FILE=https://raw.githubusercontent.com/DerpFest-Devices/kernel_xiaomi_msm8953/derp10/arch/arm64/configs/tissot_defconfig
 KERNEL_MAKE_FILE=https://raw.githubusercontent.com/Sohil876/KarnulBoildar/master/Makefile
@@ -23,7 +23,7 @@ IMAGE="${KERNEL_DIR}/out/arch/arm64/boot/Image.gz-dtb"
 TANGGAL=$(date +"%Y%m%d-%H")
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 export PATH="$(pwd)/clang/bin:$PATH"
-export KBUILD_COMPILER_STRING="$(${KERNEL_DIR}/clang/bin/clang --version | head -n 1 | perl -pe 's/\((?:http|git).*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//' -e 's/^.*clang/clang/')"
+export KBUILD_COMPILER_STRING="$($kernel/clang/bin/clang --version | head -n 1 | perl -pe 's/\((?:http|git).*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//' -e 's/^.*clang/clang/')"
 export ARCH=arm64
 export KBUILD_BUILD_USER=Sohil876
 export KBUILD_BUILD_HOST=CircleCI
