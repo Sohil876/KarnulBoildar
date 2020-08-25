@@ -1,8 +1,8 @@
 #!/bin/bash
 ### START_CONFIG ###
-KERNEL_LINK=https://github.com/KudProject/kernel_msm-4.9
-KERNEL_BRANCH=LA.UM.8.6.2.r1/master
-KERNEL_NAME=perf+
+KERNEL_LINK=https://github.com/prorooter007/Android_Kernel_Xiaomi_msm8953
+KERNEL_BRANCH=cleanlosreb
+KERNEL_NAME=LightningRebased
 KERNEL_CONF_FILE=https://raw.githubusercontent.com/DerpFest-Devices/kernel_xiaomi_msm8953/derp10/arch/arm64/configs/tissot_defconfig
 KERNEL_MAKE_FILE=https://raw.githubusercontent.com/Sohil876/KarnulBoildar/master/Makefile
 CLANG_SELECTED=https://github.com/kdrag0n/proton-clang
@@ -16,7 +16,7 @@ git clone https://github.com/MASTERGUY/AnyKernel3 -b tissot --depth=1 kernel/Any
 cd kernel
 #rm Makefile
 #wget $KERNEL_MAKE_FILE -O Makefile
-wget $KERNEL_CONF_FILE -O arch/arm64/configs/tissot_defconfig
+#wget $KERNEL_CONF_FILE -O arch/arm64/configs/tissot_defconfig
 echo "Done"
 KERNEL_DIR=$(pwd)
 IMAGE="${KERNEL_DIR}/out/arch/arm64/boot/Image.gz-dtb"
