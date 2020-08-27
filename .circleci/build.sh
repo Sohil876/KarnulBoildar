@@ -1,7 +1,7 @@
 #!/bin/bash
 ### START_CONFIG ###
 KERNEL_LINK=https://github.com/MASTERGUY/kernel_xiaomi_msm8953
-KERNEL_BRANCH= rebase-perf+
+KERNEL_BRANCH=rebase-perf+
 KERNEL_NAME=Perf-ReBase
 KERNEL_CONF_FILE=https://raw.githubusercontent.com/DerpFest-Devices/kernel_xiaomi_msm8953/derp10/arch/arm64/configs/tissot_defconfig
 KERNEL_MAKE_FILE=https://raw.githubusercontent.com/Sohil876/KarnulBoildar/master/Makefile
