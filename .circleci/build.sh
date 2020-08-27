@@ -1,8 +1,8 @@
 #!/bin/bash
 ### START_CONFIG ###
-KERNEL_LINK=https://github.com/prorooter007/Android_Kernel_Xiaomi_msm8953
-KERNEL_BRANCH=cleanlosreb
-KERNEL_NAME=LightningRebased
+KERNEL_LINK=https://github.com/reharsh67/kernel_xiaomi_msm8953
+KERNEL_BRANCH=temp
+KERNEL_NAME=BishKarnul
 KERNEL_CONF_FILE=https://raw.githubusercontent.com/DerpFest-Devices/kernel_xiaomi_msm8953/derp10/arch/arm64/configs/tissot_defconfig
 KERNEL_MAKE_FILE=https://raw.githubusercontent.com/Sohil876/KarnulBoildar/master/Makefile
 CLANG_SELECTED=https://github.com/kdrag0n/proton-clang
@@ -26,7 +26,7 @@ export PATH="$(pwd)/clang/bin:$PATH"
 export KBUILD_COMPILER_STRING="$($kernel/clang/bin/clang --version | head -n 1 | perl -pe 's/\((?:http|git).*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//' -e 's/^.*clang/clang/')"
 export ARCH=arm64
 export KBUILD_BUILD_USER=Sohil876
-export KBUILD_BUILD_HOST=CircleCI
+export KBUILD_BUILD_HOST=TheBishBuilder
 # Compile plox
 function compile() {
     make -j$(nproc) O=out ARCH=arm64 tissot_defconfig
