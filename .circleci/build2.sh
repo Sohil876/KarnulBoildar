@@ -4,7 +4,7 @@
 # All rights reserved.
 
 echo "Cloning dependencies"
-git clone --depth=1 -b wip https://github.com/Sohil876/Strixkernel_xiaomi_msm8953 kernel
+git clone --depth=1 -b rebase-perf+ https://github.com/MASTERGUY/kernel_xiaomi_msm8953 kernel
 cd kernel
 
 export ARCH=arm64
