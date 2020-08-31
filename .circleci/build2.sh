@@ -19,8 +19,7 @@ KERN_IMG="${KERNEL_DIR}"/out/arch/arm64/boot/Image.gz-dtb             # if use s
 KERN_DTB="${KERNEL_DIR}"/out/arch/arm64/boot/dtbo.img # and comment this variable
 ANYKERNEL="${HOME}"/anykernel
 
-# Repo URL
-CLANG_REPO="https://github.com/kdrag0n/proton-clang"
+# Anykernel
 ANYKERNEL_REPO="https://github.com/MASTERGUY/AnyKernel3"
 ANYKERNEL_BRANCH="tissot"
 
@@ -30,8 +29,11 @@ PARSE_ORIGIN="$(git config --get remote.origin.url)"
 COMMIT_POINT="$(git log --pretty=format:'%h : %s' -1)"
 
 # Compiler
+CLANG_REPO="https://github.com/kdrag0n/proton-clang"
+CLANG_BRANCH="master"
+git clone --depth=1 -b $CLANG_BRANCH $CLANG_REPO clang
 COMP_TYPE="clang" # unset if want to use gcc as compiler
-CLANG_DIR="/prclang"
+CLANG_DIR="clang/"
 GCC_DIR="" # Doesn't needed if use proton-clang
 GCC32_DIR="" # Doesn't needed if use proton-clang
 
