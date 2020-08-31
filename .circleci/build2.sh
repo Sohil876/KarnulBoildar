@@ -156,7 +156,7 @@ tg_pub "<b>$CIRCLE_BUILD_NUM CI Build Triggered</b>" \
 	"Branch: <code>${PARSE_BRANCH}</code>" \
 	"Commit point: <code>${COMMIT_POINT}</code>" \
 	"Clocked at: <code>$(date +%Y%m%d-%H%M)</code>"
-        "Build URL: ${CIRCLE_BUILD_URL}"
+#        "Build URL: ${CIRCLE_BUILD_URL}"
 START=$(date +"%s")
 makekernel
 packingkernel
