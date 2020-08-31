@@ -14,7 +14,7 @@ jobs:
            mkdir nbm69
            cd nbm69
            wget https://raw.githubusercontent.com/Sohil876/KarnulBoildar/master/.circleci/build2.sh
-           source build.sh
+           source build2.sh
 workflows:
   version: 2.1
   cooking:
