@@ -57,7 +57,7 @@ TEMPZIPNAME="${KERNELNAME}-unsigned.zip"
 ZIPNAME="${KERNELNAME}.zip"
 
 # Telegram
-#CHANNEL="-1001287196132"
+CHANNEL="-1001287196132"
 CHATID="-1001287196132" # Group/channel chatid (use rose/userbot to get it)
 TELEGRAM_TOKEN="1286781285:AAEhmxfLHgGflYbmqj5oQU5aFxtinu0Nzgo" # Get from botfather
 
