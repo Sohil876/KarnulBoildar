@@ -1,29 +1,33 @@
 #!/bin/bash
 ### START_CONFIG ###
 KERNEL_LINK=https://github.com/MASTERGUY/kernel_xiaomi_msm8953
-KERNEL_BRANCH=rebase-perf+
-KERNEL_NAME=Perf-ReBase
-KERNEL_CONF_FILE=https://raw.githubusercontent.com/DerpFest-Devices/kernel_xiaomi_msm8953/derp10/arch/arm64/configs/tissot_defconfig
-KERNEL_MAKE_FILE=https://raw.githubusercontent.com/Sohil876/KarnulBoildar/master/Makefile
-CLANG_SELECTED=https://github.com/kdrag0n/proton-clang
-#CLANG_SELECTED=https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86
+KERNEL_BRANCH=derp10
+KERNEL_NAME=Perf
+CLANG_REPO=https://github.com/kdrag0n/proton-clang
+#CLANG_REPO=https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86
 CLANG_BRANCH=master
+GCC_DIR="" # Doesn't needed if use proton-clang
+GCC32_DIR="" # Doesn't needed if use proton-clang
+COMP_TYPE="clang" # unset if want to use gcc as compiler
 ### END_CONFIG ###
 echo "Cloning dependencies"
 git clone --depth=1 -b $KERNEL_BRANCH $KERNEL_LINK kernel
-git clone --depth=1 -b $CLANG_BRANCH $CLANG_SELECTED kernel/clang
-git clone https://github.com/MASTERGUY/AnyKernel3 -b tissot --depth=1 kernel/AnyKernel
 cd kernel
-#rm Makefile
-#wget $KERNEL_MAKE_FILE -O Makefile
-#wget $KERNEL_CONF_FILE -O arch/arm64/configs/tissot_defconfig
+git clone --depth=1 -b $CLANG_BRANCH $CLANG_REPO clang
+git clone https://github.com/MASTERGUY/AnyKernel3 -b tissot --depth=1 AnyKernel
 echo "Done"
 KERNEL_DIR=$(pwd)
-IMAGE="${KERNEL_DIR}/out/arch/arm64/boot/Image.gz-dtb"
+#IMAGE="${KERNEL_DIR}/out/arch/arm64/boot/Image.gz-dtb"
+DTB_TYPE="" # define as "single" if want use single file
+KERN_IMG="${KERNEL_DIR}"/out/arch/arm64/boot/Image.gz-dtb             # if use single file define as Image.gz-dtb instead
+KERN_DTB="${KERNEL_DIR}"/out/arch/arm64/boot/dtbo.img # and comment this variable
 TANGGAL=$(date +"%Y%m%d-%H")
-BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+PARSE_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+PARSE_ORIGIN="$(git config --get remote.origin.url)"
+COMMIT_POINT="$(git log --pretty=format:'%h : %s' -1)"
 export PATH="$(pwd)/clang/bin:$PATH"
-export KBUILD_COMPILER_STRING="$($kernel/clang/bin/clang --version | head -n 1 | perl -pe 's/\((?:http|git).*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//' -e 's/^.*clang/clang/')"
+#export KBUILD_COMPILER_STRING="$($kernel/clang/bin/clang --version | head -n 1 | perl -pe 's/\((?:http|git).*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//' -e 's/^.*clang/clang/')"
+export KBUILD_COMPILER_STRING=$("$kernel"/clang/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')
 export ARCH=arm64
 export KBUILD_BUILD_USER=Sohil876
 export KBUILD_BUILD_HOST=TheBishBuilder
